@@ -1,0 +1,35 @@
+# Copyright Aldica Maria-Miruna, 321CA
+
+## Tema 4 - PCOM
+
+### Descrierea functionalitatii
+
+IMPORTANT: Daca se poate, as dori si testare manuala pe 
+tema mea, te rog. 
+
+Am impartit tema in mai multe parti, dupa cum urmeaza:
+-> buffer.c -> cod preluat din cadrul laboratorului
+-> buffer.h -> cod preluat din cadrul laboratorului
+-> helpers.c -> cod preluat din cadrul laboratorului
+-> helpers.h -> cod preluat din cadrul laboratorului
+-> request.c -> cod preluat din cadrul laboratorului
+-> request.h -> cod preluat din cadrul laboratorului
+-> client.c -> implementearea efectiva a comenzilor
+
+Pentru parsarea payload-urilor JSON, am considerat ca e mai
+usor de realizat manual, asa ca asa am procedat, folosindu-ma
+de functiile de memorie din C.
+
+Tiparul de gandire pentru toate comenzile e foarte asemanator:
+In client.c, intr-o bucla while ciclez la infinit pana la aparitia 
+comenzii "exit"
+- verific daca am permisiunea de a realiza comanda si parametrii
+sunt favorabili (de exemplu, daca nu sunt logat, nu pot accesa
+biblioteca cartilor);
+- deschid conexiunea catre server
+- trimit request
+- astept raspuns
+- in functie da raspuns, ori realizez comanda, ori afisez un mesaj de
+eroare. Daca avem un cod care incepe cu 2 inseamna ca actiunea s-a 
+realizat cu succes
+
